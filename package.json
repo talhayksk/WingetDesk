@@ -8,7 +8,7 @@
     "name": "Talha YÜKSEK",
     "email": "talha.yuksek@hotmail.com"
   },
-  "description": "Entropic PathFinder",
+  "description": "WingetDesk",
   "scripts": {
     "clean": "node -e \"const fs = require('fs'); fs.rmSync('dist-build', { recursive: true, force: true }); fs.rmSync('dist-electron-build', { recursive: true, force: true });\"",
     "dev": "concurrently \"vite\" \"electron .\"",
@@ -20,8 +20,8 @@
     "electron": "electron ."
   },
   "build": {
-    "appId": "com.winget.manager",
-    "productName": "Winget Manager",
+    "appId": "com.wingetdesk",
+    "productName": "WingetDesk",
     "directories": {
       "output": "dist-electron-build"
     },

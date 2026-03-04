@@ -313,9 +313,12 @@ function App() {
       <div className="titlebar-drag-region fixed top-0 left-0 w-full h-8 z-50" />
       <div className="max-w-4xl mx-auto">
         <header className="text-center mb-8">
-          <h1 className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 mb-5">
-            Winget Manager
-          </h1>
+          <div className="flex items-center justify-center gap-4 mb-5">
+            <img src="/logo.png" alt="WingetDesk Logo" className="w-14 h-14 rounded-2xl shadow-lg shadow-blue-900/40" />
+            <h1 className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+              WingetDesk
+            </h1>
+          </div>
           <div className="flex justify-center gap-4 mb-8">
             <button
               onClick={() => setActiveTab('search')}

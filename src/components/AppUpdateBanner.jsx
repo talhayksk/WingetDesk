@@ -152,7 +152,7 @@ export default function AppUpdateBanner() {
                         {/* Versiyon bilgisi */}
                         {appVersion && (
                             <div className="px-4 py-2.5 border-b border-gray-700/40">
-                                <p className="text-xs text-gray-500">Winget Manager</p>
+                                <p className="text-xs text-gray-500">WingetDesk</p>
                                 <p className="text-xs text-gray-400 font-mono">v{appVersion}</p>
                             </div>
                         )}
