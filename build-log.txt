@@ -1,0 +1,694 @@
+
+> entropic-pathfinder@1.0.0 build:publish
+> npm run clean && vite build && electron-builder --win --publish always
+
+
+> entropic-pathfinder@1.0.0 clean
+> node -e "const fs = require('fs'); fs.rmSync('dist-build', { recursive: true, force: true }); fs.rmSync('dist-electron-build', { recursive: true, force: true });"
+
+[36mvite v7.2.4 [32mbuilding client environment for production...[36m[39m
+transforming...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[32mÔ£ô[39m 33 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist-build/[22m[32mindex.html                 [39m[1m[2m  0.44 kB[22m[1m[22m[2m Ôöé gzip:  0.29 kB[22m
+[2mdist-build/[22m[35massets/index-Ciz6kczI.css  [39m[1m[2m 35.22 kB[22m[1m[22m[2m Ôöé gzip:  6.00 kB[22m
+[2mdist-build/[22m[36massets/index-Mw6cfezX.js   [39m[1m[2m217.95 kB[22m[1m[22m[2m Ôöé gzip: 66.76 kB[22m
+[32mÔ£ô built in 2.43s[39m
+  ÔÇó electron-builder  version=26.0.12 os=10.0.26200
+  ÔÇó loaded configuration  file=package.json ("build" field)
+  ÔÇó effective config  config=directories:
+  output: dist-electron-build
+  buildResources: build
+appId: com.wingetdesk
+productName: WingetDesk
+files:
+  - filter:
+      - dist-build/**/*
+      - electron/**/*
+win:
+  target:
+    - nsis
+    - portable
+  icon: electron/icon.png
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+publish:
+  provider: github
+  owner: talhayksk
+  repo: entropic-pathfinder
+
+  ÔÇó no event listeners found  event=beforePack
+  ÔÇó spawning        command=D:\projeler\entropic-pathfinder\node_modules\app-builder-bin\win\x64\app-builder.exe node-dep-tree --dir D:\projeler\entropic-pathfinder
+  ÔÇó unresolved deps  unresolved=js-yamllazy-vallodash.escaperegexplodash.isequaltiny-typed-emitter nodeModuleDir=D:\projeler\entropic-pathfinder\node_modules round=0
+  ÔÇó unresolved deps  unresolved=debugsax nodeModuleDir=D:\projeler\entropic-pathfinder\node_modules round=0
+  ÔÇó unresolved deps  unresolved=graceful-fs nodeModuleDir=D:\projeler\entropic-pathfinder\node_modules round=0
+  ÔÇó unresolved deps  unresolved=graceful-fs nodeModuleDir=D:\projeler\entropic-pathfinder\node_modules round=0
+  ÔÇó exited          command=app-builder.exe code=0 pid=46040 out=[{"dir":"D:\\projeler\\entropic-pathfinder\\node_modules","deps":[{"name":"argparse","version":"2.0.1"},{"name":"debug","version":"4.4.3"},{"name":"electron-updater","version":"6.8.3"},{"name":"graceful-fs","version":"4.2.11"},{"name":"js-yaml","version":"4.1.1"},{"name":"lazy-val","version":"1.0.5"},{"name":"lodash.escaperegexp","version":"4.1.2"},{"name":"lodash.isequal","version":"4.5.0"},{"name":"ms","version":"2.1.3"},{"name":"react","version":"19.2.0"},{"name":"react-dom","version":"19.2.0"},{"name":"sax","version":"1.4.3"},{"name":"scheduler","version":"0.27.0"},{"name":"tiny-typed-emitter","version":"2.1.0"}]},{"dir":"D:\\projeler\\entropic-pathfinder\\node_modules\\electron-updater\\node_modules","deps":[{"name":"builder-util-runtime","version":"9.5.1"},{"name":"fs-extra","version":"10.1.0"},{"name":"jsonfile","version":"6.2.0"},{"name":"semver","version":"7.7.4"},{"name":"universalify","version":"2.0.1"}]}]
+  ÔÇó executing @electron/rebuild  electronVersion=39.2.4 arch=x64 buildFromSource=false appDir=./
+  ÔÇó installing native dependencies  arch=x64
+  ÔÇó completed installing native dependencies
+  ÔÇó packaging       platform=win32 arch=x64 electron=39.2.4 appOutDir=dist-electron-build\win-unpacked
+  ÔÇó spawning        command=D:\projeler\entropic-pathfinder\node_modules\app-builder-bin\win\x64\app-builder.exe unpack-electron --configuration [{"platform":"win32","arch":"x64","version":"39.2.4"}] --output D:\projeler\entropic-pathfinder\dist-electron-build\win-unpacked --distMacOsAppName Electron.app
+  ÔÇó map async       taskCount=2
+  ÔÇó map async       taskCount=1
+  ÔÇó map async       taskCount=75
+  ÔÇó exited          command=app-builder.exe code=0 pid=43308
+  ÔÇó no event listeners found  event=afterExtract
+  ÔÇó executing       file=npm.cmd args=list -a --include prod --include optional --omit dev --json --long --silent cwd=D:\projeler\entropic-pathfinder
+  ÔÇó executed        file=npm.cmd stdout={
+  "version": "1.0.0",
+  "name": "entropic-pathfinder",
+  "private": true,
+  "type": "module",
+  "main": "electron/main.cjs",
+  "author": {
+    "name": "Talha Y├£KSEK",
+    "email": "talha.yuksek@hotmail.com"
+  },
+  "description": "WingetDesk",
+  "scripts": {
+    "clean": "node -e \"const fs = require('fs'); fs.rmSync('dist-build', { recursive: true, force: true }); fs.rmSync('dist-electron-build', { recursive: true, force: true });\"",
+    "dev": "concurrently \"vite\" \"electron .\"",
+    "build": "vite build",
+    "build:win": "npm run clean && vite build && electron-builder --win",
+    "build:publish": "npm run clean && vite build && electron-builder --win --publish always",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "electron": "electron ."
+  },
+  "build": {
+    "appId": "com.wingetdesk",
+    "productName": "WingetDesk",
+    "directories": {
+      "output": "dist-electron-build"
+    },
+    "files": [
+      "dist-build/**/*",
+      "electron/**/*"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "electron/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "talhayksk",
+      "repo": "entropic-pathfinder"
+    }
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@tailwindcss/postcss": "^4.1.17",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "autoprefixer": "^10.4.22",
+    "concurrently": "^9.2.1",
+    "electron": "^39.2.4",
+    "electron-builder": "^26.0.12",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.17",
+    "vite": "^7.2.4"
+  },
+  "_id": "entropic-pathfinder@1.0.0",
+  "extraneous": false,
+  "path": "D:\\projeler\\entropic-pathfinder",
+  "_dependencies": {
+    "electron-updater": "^6.8.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "peerDependencies": {},
+  "dependencies": {
+    "electron-updater": {
+      "version": "6.8.3",
+      "resolved": "https://registry.npmjs.org/electron-updater/-/electron-updater-6.8.3.tgz",
+      "overridden": false,
+      "name": "electron-updater",
+      "integrity": "sha512-Z6sgw3jgbikWKXei1ENdqFOxBP0WlXg3TtKfz0rgw2vIZFJUyI4pD7ZN7jrkm7EoMK+tcm/qTnPUdqfZukBlBQ==",
+      "license": "MIT",
+      "_id": "electron-updater@6.8.3",
+      "extraneous": false,
+      "path": "D:\\projeler\\entropic-pathfinder\\node_modules\\electron-updater",
+      "_dependencies": {
+        "builder-util-runtime": "9.5.1",
+        "fs-extra": "^10.1.0",
+        "js-yaml": "^4.1.0",
+        "lazy-val": "^1.0.5",
+        "lodash.escaperegexp": "^4.1.2",
+        "lodash.isequal": "^4.5.0",
+        "semver": "~7.7.3",
+        "tiny-typed-emitter": "^2.1.0"
+      },
+      "devDependencies": {},
+      "peerDependencies": {},
+      "dependencies": {
+        "builder-util-runtime": {
+          "version": "9.5.1",
+          "resolved": "https://registry.npmjs.org/builder-util-runtime/-/builder-util-runtime-9.5.1.tgz",
+          "overridden": false,
+          "name": "builder-util-runtime",
+          "integrity": "sha512-qt41tMfgHTllhResqM5DcnHyDIWNgzHvuY2jDcYP9iaGpkWxTUzV6GQjDeLnlR1/DtdlcsWQbA7sByMpmJFTLQ==",
+          "license": "MIT",
+          "engines": {
+            "node": ">=12.0.0"
+          },
+          "_id": "builder-util-runtime@9.5.1",
+          "extraneous": false,
+          "path": "D:\\projeler\\entropic-pathfinder\\node_modules\\electron-updater\\node_modules\\builder-util-runtime",
+          "_dependencies": {
+            "debug": "^4.3.4",
+            "sax": "^1.2.4"
+          },
+          "devDependencies": {},
+          "peerDependencies": {},
+          "dependencies": {
+            "debug": {
+              "version": "4.4.3",
+              "resolved": "https://registry.npmjs.org/debug/-/debug-4.4.3.tgz",
+              "overridden": false,
+              "name": "debug",
+              "integrity": "sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==",
+              "license": "MIT",
+              "engines": {
+                "node": ">=6.0"
+              },
+              "peerDependenciesMeta": {
+                "supports-color": {
+                  "optional": true
+                }
+              },
+              "_id": "debug@4.4.3",
+              "extraneous": false,
+              "path": "D:\\projeler\\entropic-pathfinder\\node_modules\\debug",
+              "_dependencies": {
+                "ms": "^2.1.3"
+              },
+              "devDependencies": {},
+              "peerDependencies": {},
+              "dependencies": {
+                "ms": {
+                  "version": "2.1.3",
+                  "resolved": "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz",
+                  "overridden": false,
+                  "name": "ms",
+                  "integrity": "sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==",
+                  "license": "MIT",
+                  "_id": "ms@2.1.3",
+                  "extraneous": false,
+                  "path": "D:\\projeler\\entropic-pathfinder\\node_modules\\ms",
+                  "_dependencies": {},
+                  "devDependencies": {},
+                  "peerDependencies": {}
+                }
+              }
+            },
+            "sax": {
+              "version": "1.4.3",
+              "resolved": "https://registry.npmjs.org/sax/-/sax-1.4.3.tgz",
+              "overridden": false,
+              "name": "sax",
+              "integrity": "sha512-yqYn1JhPczigF94DMS+shiDMjDowYO6y9+wB/4WgO0Y19jWYk0lQ4tuG5KI7kj4FTp1wxPj5IFfcrz/s1c3jjQ==",
+              "license": "BlueOak-1.0.0",
+              "_id": "sax@1.4.3",
+              "extraneous": false,
+              "path": "D:\\projeler\\entropic-pathfinder\\node_modules\\sax",
+              "_dependencies": {},
+              "devDependencies": {},
+              "peerDependencies": {}
+            }
+          }
+        },
+        "fs-extra": {
+          "version": "10.1.0",
+          "resolved": "https://registry.npmjs.org/fs-extra/-/fs-extra-10.1.0.tgz",
+          "overridden": false,
+          "name": "fs-extra",
+          "integrity": "sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==",
+          "license": "MIT",
+          "engines": {
+            "node": ">=12"
+          },
+          "_id": "fs-extra@10.1.0",
+          "extraneous": false,
+          "path": "D:\\projeler\\entropic-pathfinder\\node_modules\\electron-updater\\node_modules\\fs-extra",
+          "_dependencies": {
+            "graceful-fs": "^4.2.0",
+            "jsonfile": "^6.0.1",
+            "universalify": "^2.0.0"
+          },
+          "devDependencies": {},
+          "peerDependencies": {},
+          "dependencies": {
+            "graceful-fs": {
+              "version": "4.2.11",
+              "resolved": "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.11.tgz",
+              "overridden": false,
+              "name": "graceful-fs",
+              "integrity": "sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==",
+              "license": "ISC",
+              "_id": "graceful-fs@4.2.11",
+              "extraneous": false,
+              "path": "D:\\projeler\\entropic-pathfinder\\node_modules\\graceful-fs",
+              "_dependencies": {},
+              "devDependencies": {},
+              "peerDependencies": {}
+            },
+            "jsonfile": {
+              "version": "6.2.0",
+              "resolved": "https://registry.npmjs.org/jsonfile/-/jsonfile-6.2.0.tgz",
+              "overridden": false,
+              "name": "jsonfile",
+              "integrity": "sha512-FGuPw30AdOIUTRMC2OMRtQV+jkVj2cfPqSeWXv1NEAJ1qZ5zb1X6z1mFhbfOB/iy3ssJCD+3KuZ8r8C3uVFlAg==",
+              "license": "MIT",
+              "optionalDependencies": {
+                "graceful-fs": "^4.1.6"
+              },
+              "_id": "jsonfile@6.2.0",
+              "extraneous": false,
+              "path": "D:\\projeler\\entropic-pathfinder\\node_modules\\electron-updater\\node_modules\\jsonfile",
+              "_dependencies": {
+                "universalify": "^2.0.0",
+                "graceful-fs": "^4.1.6"
+              },
+              "devDependencies": {},
+              "peerDependencies": {},
+              "dependencies": {
+                "graceful-fs": {
+                  "version": "4.2.11",
+                  "name": "graceful-fs",
+                  "resolved": "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.11.tgz",
+                  "integrity": "sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==",
+                  "license": "ISC",
+                  "_id": "graceful-fs@4.2.11",
+                  "extraneous": false,
+                  "path": "D:\\projeler\\entropic-pathfinder\\node_modules\\graceful-fs",
+                  "_dependencies": {},
+                  "devDependencies": {},
+                  "peerDependencies": {}
+                },
+                "universalify": {
+                  "version": "2.0.1",
+                  "name": "universalify",
+                  "resolved": "https://registry.npmjs.org/universalify/-/universalify-2.0.1.tgz",
+                  "integrity": "sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==",
+                  "license": "MIT",
+                  "engines": {
+                    "node": ">= 10.0.0"
+                  },
+                  "_id": "universalify@2.0.1",
+                  "extraneous": false,
+                  "path": "D:\\projeler\\entropic-pathfinder\\node_modules\\electron-updater\\node_modules\\universalify",
+                  "_dependencies": {},
+                  "devDependencies": {},
+                  "peerDependencies": {}
+                }
+              }
+            },
+            "universalify": {
+              "version": "2.0.1",
+              "resolved": "https://registry.npmjs.org/universalify/-/universalify-2.0.1.tgz",
+              "overridden": false,
+              "name": "universalify",
+              "integrity": "sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==",
+              "license": "MIT",
+              "engines": {
+                "node": ">= 10.0.0"
+              },
+              "_id": "universalify@2.0.1",
+              "extraneous": false,
+              "path": "D:\\projeler\\entropic-pathfinder\\node_modules\\electron-updater\\node_modules\\universalify",
+              "_dependencies": {},
+              "devDependencies": {},
+              "peerDependencies": {}
+            }
+          }
+        },
+        "js-yaml": {
+          "version": "4.1.1",
+          "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-4.1.1.tgz",
+          "overridden": false,
+          "name": "js-yaml",
+          "integrity": "sha512-qQKT4zQxXl8lLwBtHMWwaTcGfFOZviOJet3Oy/xmGk2gZH677CJM9EvtfdSkgWcATZhj/55JZ0rmy3myCT5lsA==",
+          "license": "MIT",
+          "bin": {
+            "js-yaml": "bin/js-yaml.js"
+          },
+          "_id": "js-yaml@4.1.1",
+          "extraneous": false,
+          "path": "D:\\projeler\\entropic-pathfinder\\node_modules\\js-yaml",
+          "_dependencies": {
+            "argparse": "^2.0.1"
+          },
+          "devDependencies": {},
+          "peerDependencies": {},
+          "dependencies": {
+            "argparse": {
+              "version": "2.0.1",
+              "resolved": "https://registry.npmjs.org/argparse/-/argparse-2.0.1.tgz",
+              "overridden": false,
+              "name": "argparse",
+              "integrity": "sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==",
+              "license": "Python-2.0",
+              "_id": "argparse@2.0.1",
+              "extraneous": false,
+              "path": "D:\\projeler\\entropic-pathfinder\\node_modules\\argparse",
+              "_dependencies": {},
+              "devDependencies": {},
+              "peerDependencies": {}
+            }
+          }
+        },
+        "lazy-val": {
+          "version": "1.0.5",
+          "resolved": "https://registry.npmjs.org/lazy-val/-/lazy-val-1.0.5.tgz",
+          "overridden": false,
+          "name": "lazy-val",
+          "integrity": "sha512-0/BnGCCfyUMkBpeDgWihanIAF9JmZhHBgUhEqzvf+adhNGLoP6TaiI5oF8oyb3I45P+PcnrqihSf01M0l0G5+Q==",
+          "license": "MIT",
+          "_id": "lazy-val@1.0.5",
+          "extraneous": false,
+          "path": "D:\\projeler\\entropic-pathfinder\\node_modules\\lazy-val",
+          "_dependencies": {},
+          "devDependencies": {},
+          "peerDependencies": {}
+        },
+        "lodash.escaperegexp": {
+          "version": "4.1.2",
+          "resolved": "https://registry.npmjs.org/lodash.escaperegexp/-/lodash.escaperegexp-4.1.2.tgz",
+          "overridden": false,
+          "name": "lodash.escaperegexp",
+          "integrity": "sha512-TM9YBvyC84ZxE3rgfefxUWiQKLilstD6k7PTGt6wfbtXF8ixIJLOL3VYyV/z+ZiPLsVxAsKAFVwWlWeb2Y8Yyw==",
+          "license": "MIT",
+          "_id": "lodash.escaperegexp@4.1.2",
+          "extraneous": false,
+          "path": "D:\\projeler\\entropic-pathfinder\\node_modules\\lodash.escaperegexp",
+          "_dependencies": {},
+          "devDependencies": {},
+          "peerDependencies": {}
+        },
+        "lodash.isequal": {
+          "version": "4.5.0",
+          "resolved": "https://registry.npmjs.org/lodash.isequal/-/lodash.isequal-4.5.0.tgz",
+          "overridden": false,
+          "name": "lodash.isequal",
+          "integrity": "sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==",
+          "deprecated": "This package is deprecated. Use require('node:util').isDeepStrictEqual instead.",
+          "license": "MIT",
+          "_id": "lodash.isequal@4.5.0",
+          "extraneous": false,
+          "path": "D:\\projeler\\entropic-pathfinder\\node_modules\\lodash.isequal",
+          "_dependencies": {},
+          "devDependencies": {},
+          "peerDependencies": {}
+        },
+        "semver": {
+          "version": "7.7.4",
+          "resolved": "https://registry.npmjs.org/semver/-/semver-7.7.4.tgz",
+          "overridden": false,
+          "name": "semver",
+          "integrity": "sha512-vFKC2IEtQnVhpT78h1Yp8wzwrf8CM+MzKMHGJZfBtzhZNycRFnXsHk6E5TxIkkMsgNS7mdX3AGB7x2QM2di4lA==",
+          "license": "ISC",
+          "bin": {
+            "semver": "bin/semver.js"
+          },
+          "engines": {
+            "node": ">=10"
+          },
+          "_id": "semver@7.7.4",
+          "extraneous": false,
+          "path": "D:\\projeler\\entropic-pathfinder\\node_modules\\electron-updater\\node_modules\\semver",
+          "_dependencies": {},
+          "devDependencies": {},
+          "peerDependencies": {}
+        },
+        "tiny-typed-emitter": {
+          "version": "2.1.0",
+          "resolved": "https://registry.npmjs.org/tiny-typed-emitter/-/tiny-typed-emitter-2.1.0.tgz",
+          "overridden": false,
+          "name": "tiny-typed-emitter",
+          "integrity": "sha512-qVtvMxeXbVej0cQWKqVSSAHmKZEHAvxdF8HEUBFWts8h+xEo5m/lEiPakuyZ3BnCBjOD8i24kzNOiOLLgsSxhA==",
+          "license": "MIT",
+          "_id": "tiny-typed-emitter@2.1.0",
+          "extraneous": false,
+          "path": "D:\\projeler\\entropic-pathfinder\\node_modules\\tiny-typed-emitter",
+          "_dependencies": {},
+          "devDependencies": {},
+          "peerDependencies": {}
+        }
+      }
+    },
+    "react-dom": {
+      "version": "19.2.0",
+      "resolved": "https://registry.npmjs.org/react-dom/-/react-dom-19.2.0.tgz",
+      "overridden": false,
+      "name": "react-dom",
+      "integrity": "sha512-UlbRu4cAiGaIewkPyiRGJk0imDN2T3JjieT6spoL2UeSf5od4n5LB/mQ4ejmxhCFT1tYe8IvaFulzynWovsEFQ==",
+      "license": "MIT",
+      "peerDependencies": {
+        "react": "^19.2.0"
+      },
+      "_id": "react-dom@19.2.0",
+      "extraneous": false,
+      "path": "D:\\projeler\\entropic-pathfinder\\node_modules\\react-dom",
+      "_dependencies": {
+        "scheduler": "^0.27.0"
+      },
+      "devDependencies": {},
+      "dependencies": {
+        "react": {
+          "version": "19.2.0",
+          "name": "react",
+          "resolved": "https://registry.npmjs.org/react/-/react-19.2.0.tgz",
+          "integrity": "sha512-tmbWg6W31tQLeB5cdIBOicJDJRR2KzXsV7uSK9iNfLWQ5bIZfxuPEHp7M8wiHyHnn0DD1i7w3Zmin0FtkrwoCQ==",
+          "license": "MIT",
+          "engines": {
+            "node": ">=0.10.0"
+          },
+          "_id": "react@19.2.0",
+          "extraneous": false,
+          "path": "D:\\projeler\\entropic-pathfinder\\node_modules\\react",
+          "_dependencies": {},
+          "devDependencies": {},
+          "peerDependencies": {}
+        },
+        "scheduler": {
+          "version": "0.27.0",
+          "resolved": "https://registry.npmjs.org/scheduler/-/scheduler-0.27.0.tgz",
+          "overridden": false,
+          "name": "scheduler",
+          "integrity": "sha512-eNv+WrVbKu1f3vbYJT/xtiF5syA5HPIMtf9IgY/nKg0sWqzAUEvqY/xm7OcZc/qafLx/iO9FgOmeSAp4v5ti/Q==",
+          "license": "MIT",
+          "_id": "scheduler@0.27.0",
+          "extraneous": false,
+          "path": "D:\\projeler\\entropic-pathfinder\\node_modules\\scheduler",
+          "_dependencies": {},
+          "devDependencies": {},
+          "peerDependencies": {}
+        }
+      }
+    },
+    "react": {
+      "version": "19.2.0",
+      "resolved": "https://registry.npmjs.org/react/-/react-19.2.0.tgz",
+      "overridden": false,
+      "name": "react",
+      "integrity": "sha512-tmbWg6W31tQLeB5cdIBOicJDJRR2KzXsV7uSK9iNfLWQ5bIZfxuPEHp7M8wiHyHnn0DD1i7w3Zmin0FtkrwoCQ==",
+      "license": "MIT",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "_id": "react@19.2.0",
+      "extraneous": false,
+      "path": "D:\\projeler\\entropic-pathfinder\\node_modules\\react",
+      "_dependencies": {},
+      "devDependencies": {},
+      "peerDependencies": {}
+    }
+  }
+}
+
+  ÔÇó collected node modules  nodeModules=[{"name":"argparse","version":"2.0.1","dir":"D:\\projeler\\entropic-pathfinder\\node_modules\\argparse"},{"name":"builder-util-runtime","version":"9.5.1","dir":"D:\\projeler\\entropic-pathfinder\\node_modules\\electron-updater\\node_modules\\builder-util-runtime"},{"name":"debug","version":"4.4.3","dir":"D:\\projeler\\entropic-pathfinder\\node_modules\\debug"},{"name":"electron-updater","version":"6.8.3","dir":"D:\\projeler\\entropic-pathfinder\\node_modules\\electron-updater"},{"name":"fs-extra","version":"10.1.0","dir":"D:\\projeler\\entropic-pathfinder\\node_modules\\electron-updater\\node_modules\\fs-extra"},{"name":"graceful-fs","version":"4.2.11","dir":"D:\\projeler\\entropic-pathfinder\\node_modules\\graceful-fs"},{"name":"js-yaml","version":"4.1.1","dir":"D:\\projeler\\entropic-pathfinder\\node_modules\\js-yaml"},{"name":"jsonfile","version":"6.2.0","dir":"D:\\projeler\\entropic-pathfinder\\node_modules\\electron-updater\\node_modules\\jsonfile"},{"name":"lazy-val","version":"1.0.5","dir":"D:\\projeler\\entropic-pathfinder\\node_modules\\lazy-val"},{"name":"lodash.escaperegexp","version":"4.1.2","dir":"D:\\projeler\\entropic-pathfinder\\node_modules\\lodash.escaperegexp"},{"name":"lodash.isequal","version":"4.5.0","dir":"D:\\projeler\\entropic-pathfinder\\node_modules\\lodash.isequal"},{"name":"ms","version":"2.1.3","dir":"D:\\projeler\\entropic-pathfinder\\node_modules\\ms"},{"name":"react","version":"19.2.0","dir":"D:\\projeler\\entropic-pathfinder\\node_modules\\react"},{"name":"react-dom","version":"19.2.0","dir":"D:\\projeler\\entropic-pathfinder\\node_modules\\react-dom"},{"name":"sax","version":"1.4.3","dir":"D:\\projeler\\entropic-pathfinder\\node_modules\\sax"},{"name":"scheduler","version":"0.27.0","dir":"D:\\projeler\\entropic-pathfinder\\node_modules\\scheduler"},{"name":"semver","version":"7.7.4","dir":"D:\\projeler\\entropic-pathfinder\\node_modules\\electron-updater\\node_modules\\semver"},{"name":"tiny-typed-emitter","version":"2.1.0","dir":"D:\\projeler\\entropic-pathfinder\\node_modules\\tiny-typed-emitter"},{"name":"universalify","version":"2.0.1","dir":"D:\\projeler\\entropic-pathfinder\\node_modules\\electron-updater\\node_modules\\universalify"}]
+  ÔÇó updating asar integrity executable resource  executablePath=dist-electron-build\win-unpacked\WingetDesk.exe
+  ÔÇó spawning        command=D:\projeler\entropic-pathfinder\node_modules\app-builder-bin\win\x64\app-builder.exe icon --format ico --root D:\projeler\entropic-pathfinder\build --root D:\projeler\entropic-pathfinder --out D:\projeler\entropic-pathfinder\dist-electron-build\.icon-ico --input electron/icon.png
+  ÔÇó path doesn't exist  path=D:\projeler\entropic-pathfinder\build\electron\icon.png
+  ÔÇó path resolved   path=D:\projeler\entropic-pathfinder\electron\icon.png outputFormat=ico
+  ÔÇó exited          command=app-builder.exe code=0 pid=28800 out={"icons":[{"file":"D:\\projeler\\entropic-pathfinder\\dist-electron-build\\.icon-ico\\icon.ico","size":256}],"isFallback":false}
+  ÔÇó spawning        command=D:\projeler\entropic-pathfinder\node_modules\app-builder-bin\win\x64\app-builder.exe rcedit --args ["D:\\projeler\\entropic-pathfinder\\dist-electron-build\\win-unpacked\\WingetDesk.exe","--set-version-string","FileDescription","WingetDesk","--set-version-string","ProductName","WingetDesk","--set-version-string","LegalCopyright","Copyright ┬® 2026 Talha Y├£KSEK","--set-file-version","1.0.0","--set-product-version","1.0.0.0","--set-version-string","InternalName","WingetDesk","--set-version-string","OriginalFilename","","--set-version-string","CompanyName","Talha Y├£KSEK","--set-icon","D:\\projeler\\entropic-pathfinder\\dist-electron-build\\.icon-ico\\icon.ico"]
+  ÔÇó computing effective URL  initialUrl=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z
+                             currentUrl=https://release-assets.githubusercontent.com/github-production-release-asset/65527128/f73f2200-5d53-11ea-8264-ddd345f11ee4?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-03-04T09%3A18%3A13Z&rscd=attachment%3B+filename%3DwinCodeSign-2.6.0.7z&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-03-04T08%3A17%3A57Z&ske=2026-03-04T09%3A18%3A13Z&sks=b&skv=2018-11-09&sig=%2Bvh24hi5XGgKvM1%2FYygckNVDbPnlKV5jC9Q2rRP7zL0%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc3MjYxMzU3OSwibmJmIjoxNzcyNjEzMjc5LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.qifYCGqOWNPQWXHKTVhJMuVq3ogNwsk4vLinADkeub8&response-content-disposition=attachment%3B%20filename%3DwinCodeSign-2.6.0.7z&response-content-type=application%2Foctet-stream
+  ÔÇó downloading     url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z length=5635384 contentType=application/octet-stream
+  ÔÇó downloading     url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z size=5.6 MB parts=1
+  ÔÇó map async       taskCount=1
+  ÔÇó download part   range=bytes=0-5635383 index=0
+  ÔÇó downloaded      url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z duration=1.046s
+  ÔÇó execute command  command='D:\projeler\entropic-pathfinder\node_modules\7zip-bin\win\x64\7za.exe' x -snld -bd 'C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\431066831.7z' '-oC:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\431066831'
+                     workingDirectory=C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign
+  Ô¿» cannot execute  cause=exit status 2
+                    out=
+    7-Zip (a) 21.07 (x64) : Copyright (c) 1999-2021 Igor Pavlov : 2021-12-26
+    
+    Scanning the drive for archives:
+    1 file, 5635384 bytes (5504 KiB)
+    
+    Extracting archive: C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\431066831.7z
+    --
+    Path = C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\431066831.7z
+    Type = 7z
+    Physical Size = 5635384
+    Headers Size = 1492
+    Method = LZMA2:24m LZMA:20 BCJ2
+    Solid = +
+    Blocks = 2
+    
+    
+    Sub items Errors: 2
+    
+    Archives with Errors: 1
+    
+    Sub items Errors: 2
+    
+                    errorOut=ERROR: Cannot create symbolic link : Gereken ayrıcalık istemci tarafından sağlanmıyor. : C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\431066831\darwin\10.12\lib\libcrypto.dylib
+    ERROR: Cannot create symbolic link : Gereken ayrıcalık istemci tarafından sağlanmıyor. : C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\431066831\darwin\10.12\lib\libssl.dylib
+    
+                    command='D:\projeler\entropic-pathfinder\node_modules\7zip-bin\win\x64\7za.exe' x -snld -bd 'C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\431066831.7z' '-oC:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\431066831'
+                    workingDir=C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign
+  ÔÇó exited          command=app-builder.exe code=2 pid=38756
+  ÔÇó Above command failed, retrying 3 more times
+  ÔÇó spawning        command=D:\projeler\entropic-pathfinder\node_modules\app-builder-bin\win\x64\app-builder.exe rcedit --args ["D:\\projeler\\entropic-pathfinder\\dist-electron-build\\win-unpacked\\WingetDesk.exe","--set-version-string","FileDescription","WingetDesk","--set-version-string","ProductName","WingetDesk","--set-version-string","LegalCopyright","Copyright ┬® 2026 Talha Y├£KSEK","--set-file-version","1.0.0","--set-product-version","1.0.0.0","--set-version-string","InternalName","WingetDesk","--set-version-string","OriginalFilename","","--set-version-string","CompanyName","Talha Y├£KSEK","--set-icon","D:\\projeler\\entropic-pathfinder\\dist-electron-build\\.icon-ico\\icon.ico"]
+  ÔÇó computing effective URL  initialUrl=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z
+                             currentUrl=https://release-assets.githubusercontent.com/github-production-release-asset/65527128/f73f2200-5d53-11ea-8264-ddd345f11ee4?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-03-04T09%3A18%3A13Z&rscd=attachment%3B+filename%3DwinCodeSign-2.6.0.7z&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-03-04T08%3A17%3A57Z&ske=2026-03-04T09%3A18%3A13Z&sks=b&skv=2018-11-09&sig=%2Bvh24hi5XGgKvM1%2FYygckNVDbPnlKV5jC9Q2rRP7zL0%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc3MjYxMzU3OSwibmJmIjoxNzcyNjEzMjc5LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.qifYCGqOWNPQWXHKTVhJMuVq3ogNwsk4vLinADkeub8&response-content-disposition=attachment%3B%20filename%3DwinCodeSign-2.6.0.7z&response-content-type=application%2Foctet-stream
+  ÔÇó downloading     url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z length=5635384 contentType=application/octet-stream
+  ÔÇó downloading     url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z size=5.6 MB parts=1
+  ÔÇó map async       taskCount=1
+  ÔÇó download part   range=bytes=0-5635383 index=0
+  ÔÇó downloaded      url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z duration=1.073s
+  ÔÇó execute command  command='D:\projeler\entropic-pathfinder\node_modules\7zip-bin\win\x64\7za.exe' x -snld -bd 'C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\790106787.7z' '-oC:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\790106787'
+                     workingDirectory=C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign
+  Ô¿» cannot execute  cause=exit status 2
+                    out=
+    7-Zip (a) 21.07 (x64) : Copyright (c) 1999-2021 Igor Pavlov : 2021-12-26
+    
+    Scanning the drive for archives:
+    1 file, 5635384 bytes (5504 KiB)
+    
+    Extracting archive: C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\790106787.7z
+    --
+    Path = C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\790106787.7z
+    Type = 7z
+    Physical Size = 5635384
+    Headers Size = 1492
+    Method = LZMA2:24m LZMA:20 BCJ2
+    Solid = +
+    Blocks = 2
+    
+    
+    Sub items Errors: 2
+    
+    Archives with Errors: 1
+    
+    Sub items Errors: 2
+    
+                    errorOut=ERROR: Cannot create symbolic link : Gereken ayrıcalık istemci tarafından sağlanmıyor. : C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\790106787\darwin\10.12\lib\libcrypto.dylib
+    ERROR: Cannot create symbolic link : Gereken ayrıcalık istemci tarafından sağlanmıyor. : C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\790106787\darwin\10.12\lib\libssl.dylib
+    
+                    command='D:\projeler\entropic-pathfinder\node_modules\7zip-bin\win\x64\7za.exe' x -snld -bd 'C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\790106787.7z' '-oC:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\790106787'
+                    workingDir=C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign
+  ÔÇó exited          command=app-builder.exe code=2 pid=30016
+  ÔÇó Above command failed, retrying 3 more times
+  ÔÇó spawning        command=D:\projeler\entropic-pathfinder\node_modules\app-builder-bin\win\x64\app-builder.exe rcedit --args ["D:\\projeler\\entropic-pathfinder\\dist-electron-build\\win-unpacked\\WingetDesk.exe","--set-version-string","FileDescription","WingetDesk","--set-version-string","ProductName","WingetDesk","--set-version-string","LegalCopyright","Copyright ┬® 2026 Talha Y├£KSEK","--set-file-version","1.0.0","--set-product-version","1.0.0.0","--set-version-string","InternalName","WingetDesk","--set-version-string","OriginalFilename","","--set-version-string","CompanyName","Talha Y├£KSEK","--set-icon","D:\\projeler\\entropic-pathfinder\\dist-electron-build\\.icon-ico\\icon.ico"]
+  ÔÇó computing effective URL  initialUrl=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z
+                             currentUrl=https://release-assets.githubusercontent.com/github-production-release-asset/65527128/f73f2200-5d53-11ea-8264-ddd345f11ee4?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-03-04T09%3A18%3A13Z&rscd=attachment%3B+filename%3DwinCodeSign-2.6.0.7z&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-03-04T08%3A17%3A57Z&ske=2026-03-04T09%3A18%3A13Z&sks=b&skv=2018-11-09&sig=%2Bvh24hi5XGgKvM1%2FYygckNVDbPnlKV5jC9Q2rRP7zL0%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc3MjYxMzU3OSwibmJmIjoxNzcyNjEzMjc5LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.qifYCGqOWNPQWXHKTVhJMuVq3ogNwsk4vLinADkeub8&response-content-disposition=attachment%3B%20filename%3DwinCodeSign-2.6.0.7z&response-content-type=application%2Foctet-stream
+  ÔÇó downloading     url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z length=5635384 contentType=application/octet-stream
+  ÔÇó downloading     url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z size=5.6 MB parts=1
+  ÔÇó map async       taskCount=1
+  ÔÇó download part   range=bytes=0-5635383 index=0
+  ÔÇó downloaded      url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z duration=951ms
+  ÔÇó execute command  command='D:\projeler\entropic-pathfinder\node_modules\7zip-bin\win\x64\7za.exe' x -snld -bd 'C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\383560323.7z' '-oC:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\383560323'
+                     workingDirectory=C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign
+  Ô¿» cannot execute  cause=exit status 2
+                    out=
+    7-Zip (a) 21.07 (x64) : Copyright (c) 1999-2021 Igor Pavlov : 2021-12-26
+    
+    Scanning the drive for archives:
+    1 file, 5635384 bytes (5504 KiB)
+    
+    Extracting archive: C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\383560323.7z
+    --
+    Path = C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\383560323.7z
+    Type = 7z
+    Physical Size = 5635384
+    Headers Size = 1492
+    Method = LZMA2:24m LZMA:20 BCJ2
+    Solid = +
+    Blocks = 2
+    
+    
+    Sub items Errors: 2
+    
+    Archives with Errors: 1
+    
+    Sub items Errors: 2
+    
+                    errorOut=ERROR: Cannot create symbolic link : Gereken ayrıcalık istemci tarafından sağlanmıyor. : C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\383560323\darwin\10.12\lib\libcrypto.dylib
+    ERROR: Cannot create symbolic link : Gereken ayrıcalık istemci tarafından sağlanmıyor. : C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\383560323\darwin\10.12\lib\libssl.dylib
+    
+                    command='D:\projeler\entropic-pathfinder\node_modules\7zip-bin\win\x64\7za.exe' x -snld -bd 'C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\383560323.7z' '-oC:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\383560323'
+                    workingDir=C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign
+  ÔÇó exited          command=app-builder.exe code=2 pid=22764
+  ÔÇó Above command failed, retrying 3 more times
+  ÔÇó spawning        command=D:\projeler\entropic-pathfinder\node_modules\app-builder-bin\win\x64\app-builder.exe rcedit --args ["D:\\projeler\\entropic-pathfinder\\dist-electron-build\\win-unpacked\\WingetDesk.exe","--set-version-string","FileDescription","WingetDesk","--set-version-string","ProductName","WingetDesk","--set-version-string","LegalCopyright","Copyright ┬® 2026 Talha Y├£KSEK","--set-file-version","1.0.0","--set-product-version","1.0.0.0","--set-version-string","InternalName","WingetDesk","--set-version-string","OriginalFilename","","--set-version-string","CompanyName","Talha Y├£KSEK","--set-icon","D:\\projeler\\entropic-pathfinder\\dist-electron-build\\.icon-ico\\icon.ico"]
+  ÔÇó computing effective URL  initialUrl=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z
+                             currentUrl=https://release-assets.githubusercontent.com/github-production-release-asset/65527128/f73f2200-5d53-11ea-8264-ddd345f11ee4?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-03-04T09%3A18%3A13Z&rscd=attachment%3B+filename%3DwinCodeSign-2.6.0.7z&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-03-04T08%3A17%3A57Z&ske=2026-03-04T09%3A18%3A13Z&sks=b&skv=2018-11-09&sig=%2Bvh24hi5XGgKvM1%2FYygckNVDbPnlKV5jC9Q2rRP7zL0%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc3MjYxMzU3OSwibmJmIjoxNzcyNjEzMjc5LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.qifYCGqOWNPQWXHKTVhJMuVq3ogNwsk4vLinADkeub8&response-content-disposition=attachment%3B%20filename%3DwinCodeSign-2.6.0.7z&response-content-type=application%2Foctet-stream
+  ÔÇó downloading     url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z length=5635384 contentType=application/octet-stream
+  ÔÇó downloading     url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z size=5.6 MB parts=1
+  ÔÇó map async       taskCount=1
+  ÔÇó download part   range=bytes=0-5635383 index=0
+  ÔÇó downloaded      url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z duration=972ms
+  ÔÇó execute command  command='D:\projeler\entropic-pathfinder\node_modules\7zip-bin\win\x64\7za.exe' x -snld -bd 'C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\293818475.7z' '-oC:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\293818475'
+                     workingDirectory=C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign
+  Ô¿» cannot execute  cause=exit status 2
+                    out=
+    7-Zip (a) 21.07 (x64) : Copyright (c) 1999-2021 Igor Pavlov : 2021-12-26
+    
+    Scanning the drive for archives:
+    1 file, 5635384 bytes (5504 KiB)
+    
+    Extracting archive: C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\293818475.7z
+    --
+    Path = C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\293818475.7z
+    Type = 7z
+    Physical Size = 5635384
+    Headers Size = 1492
+    Method = LZMA2:24m LZMA:20 BCJ2
+    Solid = +
+    Blocks = 2
+    
+    
+    Sub items Errors: 2
+    
+    Archives with Errors: 1
+    
+    Sub items Errors: 2
+    
+                    errorOut=ERROR: Cannot create symbolic link : Gereken ayrıcalık istemci tarafından sağlanmıyor. : C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\293818475\darwin\10.12\lib\libcrypto.dylib
+    ERROR: Cannot create symbolic link : Gereken ayrıcalık istemci tarafından sağlanmıyor. : C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\293818475\darwin\10.12\lib\libssl.dylib
+    
+                    command='D:\projeler\entropic-pathfinder\node_modules\7zip-bin\win\x64\7za.exe' x -snld -bd 'C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\293818475.7z' '-oC:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign\293818475'
+                    workingDir=C:\Users\AYBU\AppData\Local\electron-builder\Cache\winCodeSign
+  ÔÇó exited          command=app-builder.exe code=2 pid=3480
+  ÔÇó Above command failed, retrying 3 more times

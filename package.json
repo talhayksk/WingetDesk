@@ -1,7 +1,7 @@
 {
   "name": "entropic-pathfinder",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.1.2",
   "type": "module",
   "main": "electron/main.cjs",
   "author": {
@@ -48,8 +48,10 @@
   },
   "dependencies": {
     "electron-updater": "^6.8.3",
+    "i18next": "^25.8.14",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "react-i18next": "^16.5.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

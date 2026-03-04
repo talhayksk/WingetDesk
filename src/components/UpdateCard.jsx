@@ -1,6 +1,8 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const UpdateCard = ({ app, isSelected, onToggleSelect, onUpdate, isUpdating, isBulkProcessing }) => {
+    const { t } = useTranslation();
     const isBusy = isUpdating || isBulkProcessing;
 
     return (
@@ -14,8 +16,8 @@ const UpdateCard = ({ app, isSelected, onToggleSelect, onUpdate, isUpdating, isB
                     {/* Checkbox */}
                     <div
                         className={`mt-1 w-5 h-5 rounded border-2 flex-shrink-0 flex items-center justify-center transition-all cursor-pointer ${isSelected
-                                ? 'bg-blue-600 border-blue-600'
-                                : 'border-gray-500 hover:border-gray-400'
+                            ? 'bg-blue-600 border-blue-600'
+                            : 'border-gray-500 hover:border-gray-400'
                             }`}
                         onClick={(e) => {
                             e.stopPropagation();
@@ -50,7 +52,7 @@ const UpdateCard = ({ app, isSelected, onToggleSelect, onUpdate, isUpdating, isB
                         : 'bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-900/20'
                         }`}
                 >
-                    {isUpdating ? 'Updating...' : 'Update'}
+                    {isUpdating ? t('app.updating') : t('app.update')}
                 </button>
             </div>
         </div>

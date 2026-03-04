@@ -24,3 +24,6 @@ dist-electron-build
 *.njsproj
 *.sln
 *.sw?
+
+.env
+github token

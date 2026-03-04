@@ -1,12 +1,15 @@
 
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import SearchBar from './components/SearchBar';
 import AppCard from './components/AppCard';
 import UpdateCard from './components/UpdateCard';
 import AppUpdateBanner from './components/AppUpdateBanner';
+import LanguageSelector from './components/LanguageSelector';
 import './index.css';
 
 function App() {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('search'); // 'search' | 'updates'
   const [apps, setApps] = useState([]);
   const [updates, setUpdates] = useState([]);
@@ -314,7 +317,7 @@ function App() {
       <div className="max-w-4xl mx-auto">
         <header className="text-center mb-8">
           <div className="flex items-center justify-center gap-4 mb-5">
-            <img src="/logo.png" alt="WingetDesk Logo" className="w-14 h-14 rounded-2xl shadow-lg shadow-blue-900/40" />
+            <img src="./logo.png" alt="WingetDesk Logo" className="w-14 h-14 rounded-2xl shadow-lg shadow-blue-900/40" />
             <h1 className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
               WingetDesk
             </h1>
@@ -327,7 +330,7 @@ function App() {
                 : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
                 }`}
             >
-              Search
+              {t('app.searchTab')}
             </button>
             <button
               onClick={() => setActiveTab('updates')}
@@ -336,12 +339,13 @@ function App() {
                 : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
                 }`}
             >
-              Updates
+              {t('app.updatesTab')}
             </button>
           </div>
         </header>
 
         <AppUpdateBanner />
+        <LanguageSelector />
 
         {activeTab === 'search' ? (
           <>
@@ -371,11 +375,11 @@ function App() {
                         </svg>
                       )}
                     </div>
-                    Select All
+                    {t('app.selectAll')}
                   </button>
                   {selectedApps.size > 0 && (
                     <span className="text-sm text-blue-400 font-medium">
-                      {selectedApps.size} selected
+                      {selectedApps.size} {t('app.selected')}
                     </span>
                   )}
                 </div>
@@ -386,8 +390,8 @@ function App() {
                     className="px-4 py-2 bg-green-600 hover:bg-green-500 disabled:bg-gray-700 disabled:text-gray-400 text-white rounded-lg font-medium transition-all shadow-lg shadow-green-900/20 text-sm"
                   >
                     {bulkInstalling
-                      ? `Installing... (${bulkProgress.current}/${bulkProgress.total})`
-                      : `Install Selected (${selectedApps.size})`
+                      ? t('app.installingProgress', { current: bulkProgress.current, total: bulkProgress.total })
+                      : t('app.installSelected', { count: selectedApps.size })
                     }
                   </button>
                 )}
@@ -436,7 +440,7 @@ function App() {
                 ))}
                 {apps.length === 0 && !error && (
                   <div className="text-center text-gray-500 py-12">
-                    Search for an app to get started
+                    {t('app.searchToStart')}
                   </div>
                 )}
               </div>
@@ -468,13 +472,13 @@ function App() {
                         </svg>
                       )}
                     </div>
-                    Select All
+                    {t('app.selectAll')}
                   </button>
                 )}
-                <h2 className="text-lg font-bold">Available Updates ({updates.length})</h2>
+                <h2 className="text-lg font-bold">{t('app.availableUpdates')} ({updates.length})</h2>
                 {selectedUpdates.size > 0 && (
                   <span className="text-sm text-blue-400 font-medium">
-                    {selectedUpdates.size} selected
+                    {selectedUpdates.size} {t('app.selected')}
                   </span>
                 )}
               </div>
@@ -486,8 +490,8 @@ function App() {
                     className="px-4 py-2 bg-blue-600 hover:bg-blue-500 disabled:bg-gray-700 disabled:text-gray-400 text-white rounded-lg font-medium transition-all shadow-lg shadow-blue-900/20 text-sm"
                   >
                     {bulkUpdating
-                      ? `Updating... (${bulkProgress.current}/${bulkProgress.total})`
-                      : `Update Selected (${selectedUpdates.size})`
+                      ? t('app.updatingProgress', { current: bulkProgress.current, total: bulkProgress.total })
+                      : t('app.updateSelected', { count: selectedUpdates.size })
                     }
                   </button>
                 )}
@@ -497,7 +501,7 @@ function App() {
                     disabled={loading || isBulkProcessing}
                     className="px-4 py-2 bg-green-600 hover:bg-green-500 disabled:bg-gray-700 disabled:text-gray-400 text-white rounded-lg font-medium transition-colors shadow-lg shadow-green-900/20 text-sm"
                   >
-                    Update All
+                    {t('app.updateAll')}
                   </button>
                 )}
               </div>

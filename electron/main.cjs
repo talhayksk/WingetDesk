@@ -9,6 +9,7 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 1200,
         height: 800,
+        icon: path.join(__dirname, 'icon.png'),
         webPreferences: {
             preload: path.join(__dirname, 'preload.cjs'),
             nodeIntegration: false,
@@ -28,7 +29,7 @@ function createWindow() {
     } else if (!app.isPackaged) {
         mainWindow.loadURL('http://localhost:5173');
     } else {
-        mainWindow.loadFile(path.join(__dirname, '../dist/index.html'));
+        mainWindow.loadFile(path.join(__dirname, '../dist-build/index.html'));
     }
 }
 
@@ -59,7 +60,12 @@ function setupAutoUpdater() {
     });
 
     autoUpdater.on('error', (err) => {
-        sendUpdateStatus('error', err?.message || err?.toString());
+        const errorMsg = err?.message || err?.toString() || '';
+        if (errorMsg.includes('No published versions on GitHub')) {
+            sendUpdateStatus('not-available');
+        } else {
+            sendUpdateStatus('error', errorMsg);
+        }
     });
 }
 

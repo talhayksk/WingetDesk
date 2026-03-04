@@ -130,7 +130,7 @@ export default function AppUpdateBanner() {
     return (
         <>
             {/* ── Sağ üst köşe dropdown menü ── */}
-            <div className="fixed top-1 right-3 z-50 no-drag" ref={menuRef}>
+            <div className="fixed top-1 left-3 z-50 no-drag" ref={menuRef}>
                 <button
                     onClick={() => setMenuOpen(prev => !prev)}
                     className="relative p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-700/60 transition-all duration-200"
@@ -148,7 +148,7 @@ export default function AppUpdateBanner() {
 
                 {/* Dropdown */}
                 {menuOpen && (
-                    <div className="absolute right-0 top-full mt-1 w-56 bg-gray-800/95 backdrop-blur-xl border border-gray-700/60 rounded-xl shadow-2xl shadow-black/40 overflow-hidden animate-slideDown">
+                    <div className="absolute left-0 top-full mt-1 w-56 bg-gray-800/95 backdrop-blur-xl border border-gray-700/60 rounded-xl shadow-2xl shadow-black/40 overflow-hidden animate-slideDown">
                         {/* Versiyon bilgisi */}
                         {appVersion && (
                             <div className="px-4 py-2.5 border-b border-gray-700/40">

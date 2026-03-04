@@ -1,6 +1,8 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const AppCard = ({ app, isInstalled, isSelected, onToggleSelect, onInstall, onUninstall, isInstalling, isUninstalling, isBulkProcessing }) => {
+    const { t } = useTranslation();
     const isBusy = isInstalling || isUninstalling || isBulkProcessing;
 
     return (
@@ -17,8 +19,8 @@ const AppCard = ({ app, isInstalled, isSelected, onToggleSelect, onInstall, onUn
                     {!isInstalled && (
                         <div
                             className={`mt-1 w-5 h-5 rounded border-2 flex-shrink-0 flex items-center justify-center transition-all cursor-pointer ${isSelected
-                                    ? 'bg-blue-600 border-blue-600'
-                                    : 'border-gray-500 hover:border-gray-400'
+                                ? 'bg-blue-600 border-blue-600'
+                                : 'border-gray-500 hover:border-gray-400'
                                 }`}
                             onClick={(e) => {
                                 e.stopPropagation();
@@ -37,7 +39,7 @@ const AppCard = ({ app, isInstalled, isSelected, onToggleSelect, onInstall, onUn
                             <h3 className="text-xl font-bold text-white">{app.Name}</h3>
                             {isInstalled && (
                                 <span className="px-2 py-0.5 text-xs bg-green-500/20 text-green-400 border border-green-500/30 rounded-full font-medium">
-                                    Installed
+                                    {t('app.installed') || 'Installed'}
                                 </span>
                             )}
                         </div>
@@ -57,7 +59,7 @@ const AppCard = ({ app, isInstalled, isSelected, onToggleSelect, onInstall, onUn
                             : 'bg-red-600 hover:bg-red-500 text-white shadow-lg shadow-red-900/20'
                             }`}
                     >
-                        {isUninstalling ? 'Uninstalling...' : 'Uninstall'}
+                        {isUninstalling ? t('app.uninstalling') || 'Uninstalling...' : t('app.uninstall')}
                     </button>
                 ) : (
                     <button
@@ -68,7 +70,7 @@ const AppCard = ({ app, isInstalled, isSelected, onToggleSelect, onInstall, onUn
                             : 'bg-green-600 hover:bg-green-500 text-white shadow-lg shadow-green-900/20'
                             }`}
                     >
-                        {isInstalling ? 'Installing...' : 'Install'}
+                        {isInstalling ? t('app.installing') : t('app.install')}
                     </button>
                 )}
             </div>
