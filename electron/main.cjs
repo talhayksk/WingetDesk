@@ -1,9 +1,12 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow, ipcMain, shell } = require('electron');
 const path = require('path');
 const { exec } = require('child_process');
+const { autoUpdater } = require('electron-updater');
+
+let mainWindow = null;
 
 function createWindow() {
-    const win = new BrowserWindow({
+    mainWindow = new BrowserWindow({
         width: 1200,
         height: 800,
         webPreferences: {
@@ -21,16 +24,96 @@ function createWindow() {
     });
 
     if (process.env.VITE_DEV_SERVER_URL) {
-        win.loadURL(process.env.VITE_DEV_SERVER_URL);
+        mainWindow.loadURL(process.env.VITE_DEV_SERVER_URL);
     } else if (!app.isPackaged) {
-        win.loadURL('http://localhost:5173');
+        mainWindow.loadURL('http://localhost:5173');
     } else {
-        win.loadFile(path.join(__dirname, '../dist/index.html'));
+        mainWindow.loadFile(path.join(__dirname, '../dist/index.html'));
     }
 }
 
+// ─── Auto-Updater Setup ─────────────────────────────
+function setupAutoUpdater() {
+    // Dev ortamında da test edebilmek için
+    autoUpdater.autoDownload = false; // Kullanıcı onaylasın
+    autoUpdater.autoInstallOnAppQuit = true;
+
+    autoUpdater.on('checking-for-update', () => {
+        sendUpdateStatus('checking');
+    });
+
+    autoUpdater.on('update-available', (info) => {
+        sendUpdateStatus('available', info);
+    });
+
+    autoUpdater.on('update-not-available', (info) => {
+        sendUpdateStatus('not-available', info);
+    });
+
+    autoUpdater.on('download-progress', (progress) => {
+        sendUpdateStatus('downloading', progress);
+    });
+
+    autoUpdater.on('update-downloaded', (info) => {
+        sendUpdateStatus('downloaded', info);
+    });
+
+    autoUpdater.on('error', (err) => {
+        sendUpdateStatus('error', err?.message || err?.toString());
+    });
+}
+
+function sendUpdateStatus(status, data = null) {
+    if (mainWindow && !mainWindow.isDestroyed()) {
+        mainWindow.webContents.send('update-status', { status, data });
+    }
+}
+
+// IPC: Kullanıcı manuel güncelleme kontrolü
+ipcMain.handle('app-check-for-updates', async () => {
+    try {
+        const result = await autoUpdater.checkForUpdates();
+        return { success: true, data: result?.updateInfo };
+    } catch (err) {
+        return { success: false, error: err.message };
+    }
+});
+
+// IPC: Güncellemeyi indir
+ipcMain.handle('app-download-update', async () => {
+    try {
+        await autoUpdater.downloadUpdate();
+        return { success: true };
+    } catch (err) {
+        return { success: false, error: err.message };
+    }
+});
+
+// IPC: Güncellemeyi kur ve uygulamayı yeniden başlat
+ipcMain.handle('app-install-update', () => {
+    autoUpdater.quitAndInstall(false, true);
+});
+
+// IPC: Mevcut versiyon bilgisi
+ipcMain.handle('app-get-version', () => {
+    return app.getVersion();
+});
+
+// IPC: Dış linkleri sistem tarayıcısında aç
+ipcMain.handle('open-external', async (event, url) => {
+    await shell.openExternal(url);
+});
+
 app.whenReady().then(() => {
     createWindow();
+    setupAutoUpdater();
+
+    // Uygulama açıldığında otomatik kontrol et (sadece paketlenmiş build'de)
+    if (app.isPackaged) {
+        setTimeout(() => {
+            autoUpdater.checkForUpdates();
+        }, 3000); // 3 saniye sonra kontrol et
+    }
 
     app.on('activate', () => {
         if (BrowserWindow.getAllWindows().length === 0) createWindow();

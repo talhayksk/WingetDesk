@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import SearchBar from './components/SearchBar';
 import AppCard from './components/AppCard';
 import UpdateCard from './components/UpdateCard';
+import AppUpdateBanner from './components/AppUpdateBanner';
 import './index.css';
 
 function App() {
@@ -337,6 +338,8 @@ function App() {
           </div>
         </header>
 
+        <AppUpdateBanner />
+
         {activeTab === 'search' ? (
           <>
             <SearchBar onSearch={handleSearch} />
@@ -351,10 +354,10 @@ function App() {
                     className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors disabled:opacity-50"
                   >
                     <div className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-all ${selectedApps.size === notInstalledApps.length && notInstalledApps.length > 0
-                        ? 'bg-blue-600 border-blue-600'
-                        : selectedApps.size > 0
-                          ? 'bg-blue-600/50 border-blue-500'
-                          : 'border-gray-500 hover:border-gray-400'
+                      ? 'bg-blue-600 border-blue-600'
+                      : selectedApps.size > 0
+                        ? 'bg-blue-600/50 border-blue-500'
+                        : 'border-gray-500 hover:border-gray-400'
                       }`}>
                       {selectedApps.size > 0 && (
                         <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
@@ -448,10 +451,10 @@ function App() {
                     className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors disabled:opacity-50"
                   >
                     <div className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-all ${selectedUpdates.size === updates.length && updates.length > 0
-                        ? 'bg-blue-600 border-blue-600'
-                        : selectedUpdates.size > 0
-                          ? 'bg-blue-600/50 border-blue-500'
-                          : 'border-gray-500 hover:border-gray-400'
+                      ? 'bg-blue-600 border-blue-600'
+                      : selectedUpdates.size > 0
+                        ? 'bg-blue-600/50 border-blue-500'
+                        : 'border-gray-500 hover:border-gray-400'
                       }`}>
                       {selectedUpdates.size > 0 && (
                         <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
