@@ -1,6 +1,6 @@
 # WingetDesk 🚀
 
-![WingetDesk Logo](https://github.com/kullanici-adin/wingetdesk/raw/main/assets/logo.png)
+![WingetDesk Logo](https://github.com/talhayksk/wingetdesk/raw/main/assets/logo.png)
 
 **WingetDesk**, Windows'un güçlü paket yöneticisi olan **Windows Package Manager (winget)** için geliştirilmiş, modern ve kullanıcı dostu bir Grafik Kullanıcı Arayüzüdür (GUI). Komut satırına ihtiyaç duymadan binlerce uygulamayı kolayca keşfedin, yükleyin ve güncel tutun.
 
@@ -25,7 +25,7 @@ Uygulamanın düzgün çalışması için sisteminizde **Winget** (Windows App I
 
 ### Kurulum
 
-1.  [Releases](https://github.com/kullanici-adin/wingetdesk/releases) sayfasından en son `.exe` veya `.msix` dosyasını indirin.
+1.  [Releases](https://github.com/talhayksk/wingetdesk/releases) sayfasından en son `.exe` veya `.msix` dosyasını indirin.
 2.  Kurulum dosyasını çalıştırın ve yönergeleri izleyin.
 3.  WingetDesk'i başlatın ve paketlerinizi yönetmeye başlayın!
 
