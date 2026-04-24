@@ -1,16 +1,49 @@
-# React + Vite
+# WingetDesk 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![WingetDesk Logo](https://github.com/kullanici-adin/wingetdesk/raw/main/assets/logo.png)
 
-Currently, two official plugins are available:
+**WingetDesk**, Windows'un güçlü paket yöneticisi olan **Windows Package Manager (winget)** için geliştirilmiş, modern ve kullanıcı dostu bir Grafik Kullanıcı Arayüzüdür (GUI). Komut satırına ihtiyaç duymadan binlerce uygulamayı kolayca keşfedin, yükleyin ve güncel tutun.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Özellikler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* 🔍 **Kapsamlı Arama:** Winget kütüphanesindeki binlerce uygulamayı anında bulun.
+* 📦 **Kolay Kurulum:** Tek tıkla uygulamaları sisteminize yükleyin.
+* 🆙 **Akıllı Güncellemeler:** Kurulu olan tüm uygulamalarınızı tarayın ve eski sürümleri saniyeler içinde güncelleyin.
+* 🗑️ **Uygulama Yönetimi:** Mevcut uygulamalarınızı görüntüleyin ve ihtiyacınız olmayanları sisteminizden kaldırın.
+* 🎨 **Minimalist Tasarım:** Electron ile güçlendirilmiş, sade ve işlevsel kullanıcı arayüzü.
+* ⚡ **Hız ve Performans:** Winget'in gücünü görselleştirirken sistem kaynaklarını yormaz.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Başlangıç
+
+### Gereksinimler
+
+Uygulamanın düzgün çalışması için sisteminizde **Winget** (Windows App Installer) yüklü olmalıdır. Genellikle Windows 10 ve 11 ile birlikte yüklü gelir.
+
+### Kurulum
+
+1.  [Releases](https://github.com/kullanici-adin/wingetdesk/releases) sayfasından en son `.exe` veya `.msix` dosyasını indirin.
+2.  Kurulum dosyasını çalıştırın ve yönergeleri izleyin.
+3.  WingetDesk'i başlatın ve paketlerinizi yönetmeye başlayın!
+
+---
+
+## 🛠️ Geliştirme
+
+Projeyi yerel ortamınızda çalıştırmak isterseniz:
+
+```bash
+# Depoyu klonlayın
+git clone [https://github.com/talhayksk/wingetdesk.git](https://github.com/kullanici-adin/wingetdesk.git)
+
+# Proje dizinine gidin
+cd wingetdesk
+
+# Bağımlılıkları yükleyin
+npm install
+
+# Uygulamayı başlatın
+npm start
