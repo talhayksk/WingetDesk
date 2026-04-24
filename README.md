@@ -1,6 +1,6 @@
 # WingetDesk 🚀
 
-![WingetDesk Logo]([https://github.com/talhayksk/wingetdesk/raw/main/assets/logo.png](https://github.com/talhayksk/WingetDesk/blob/main/public/logo.png))
+![WingetDesk Logo](https://github.com/talhayksk/WingetDesk/blob/main/public/logo.png)
 
 **WingetDesk**, Windows'un güçlü paket yöneticisi olan **Windows Package Manager (winget)** için geliştirilmiş, modern ve kullanıcı dostu bir Grafik Kullanıcı Arayüzüdür (GUI). Komut satırına ihtiyaç duymadan binlerce uygulamayı kolayca keşfedin, yükleyin ve güncel tutun.
 
