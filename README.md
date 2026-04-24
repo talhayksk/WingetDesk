@@ -44,7 +44,7 @@ Projeyi yerel ortamınızda çalıştırmak isterseniz:
 
 ```bash
 # Depoyu klonlayın
-git clone [https://github.com/talhayksk/wingetdesk.git](https://github.com/kullanici-adin/wingetdesk.git)
+git clone [https://github.com/talhayksk/wingetdesk.git](https://github.com/talhayksk/WingetDesk.git)
 
 # Proje dizinine gidin
 cd wingetdesk
