@@ -1,3 +1,5 @@
+<img width="1915" height="1027" alt="Ekran görüntüsü 2026-04-22 162540" src="https://github.com/user-attachments/assets/44e8dece-f28f-4745-9819-40d077c68cee" />
+<img width="1915" height="1027" alt="Ekran görüntüsü 2026-04-22 162540" src="https://github.com/user-attachments/assets/f97f7ed0-7936-471c-9274-4f0e4e162282" />
 # WingetDesk 🚀
 
 ![WingetDesk Logo](https://github.com/talhayksk/WingetDesk/blob/main/public/logo.png)
@@ -32,6 +34,9 @@ Uygulamanın düzgün çalışması için sisteminizde **Winget** (Windows App I
 ---
 
 <img width="1919" height="965" alt="Ekran görüntüsü 2026-04-22 162502" src="https://github.com/user-attachments/assets/c589b635-6dd2-462a-8d3a-42b976d5b966" />
+<img width="1915" height="1030" alt="Ekran görüntüsü 2026-04-22 162623" src="https://github.com/user-attachments/assets/e93f51f9-309f-4d5a-baa9-09dce9f59f62" />
+![Uploading Ekran görüntüsü 2026-04-22 162540.png…]()
+
 
 ## 🛠️ Geliştirme
 
