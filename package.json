@@ -32,9 +32,18 @@
     "win": {
       "target": [
         "nsis",
-        "portable"
+        "portable",
+        "appx"
       ],
       "icon": "electron/icon.png"
+    },
+    "appx": {
+      "applicationId": "WingetDesk",
+      "identityName": "TalhaYKSEK.WingetDesk",
+      "publisher": "CN=5ACD4307-D67A-4155-956F-2A55D46249CF",
+      "publisherDisplayName": "Talha Yüksek",
+      "showNameOnTiles": true,
+      "setBuildNumber": true
     },
     "nsis": {
       "oneClick": false,
