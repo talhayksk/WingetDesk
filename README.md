@@ -47,3 +47,19 @@ npm install
 
 # Uygulamayı başlatın
 npm start
+
+
+
+🤝 Katkıda Bulunma
+
+Hata bildirimleri, özellik önerileri veya PR (Pull Request) gönderimleri her zaman memnuniyetle karşılanır! Büyük değişiklikler için lütfen önce neyi değiştirmek istediğinizi tartışmak üzere bir issue açın.
+📜 Lisans
+
+Bu proje MIT lisansı altında lisanslanmıştır.
+
+Developed with ❤️ by Talha YÜKSEK
+
+<img width="1915" height="1030" alt="Ekran görüntüsü 2026-04-22 162623" src="https://github.com/user-attachments/assets/8d5f3484-2502-465c-a541-bf564c67de85" />
+<img width="1915" height="1027" alt="Ekran görüntüsü 2026-04-22 162540" src="https://github.com/user-attachments/assets/821ad2ca-f3b2-4fe9-9c3f-0138d2f00677" />
+<img width="1919" height="965" alt="Ekran görüntüsü 2026-04-22 162502" src="https://github.com/user-attachments/assets/5049b67c-5516-40b6-aded-45b641ae7b55" />
+
